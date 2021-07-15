@@ -24,11 +24,8 @@ class Application:
         self.widget3 = Frame(master)
         self.widget3.place(x = 220, y = 150)
 
-        
-        self.sortear["command"] = self.sortear
-        
-
-        self.resultado = Label(self.widget3, text = self.numero_sorteado , background = "#FFF" )
+        self.resultado = Label(self.widget3, text = str(np.random.randint(0, 101)) , background = "#FFF" )
+        self.sortear["command"] = resultado.
         self.sortear.pack (side = BOTTOM)
         self.resultado.pack()
 
