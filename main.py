@@ -13,30 +13,38 @@ class Application:
         self.msg["font"] = ("Verdana", "23", "italic", "bold")
         self.msg.pack()
 
-        self.widget2 = Frame(master)
-        self.widget2.place(x = 220, y = 250)
-        #self.widget2.pack(ipadx = 20, ipady = 20, padx = 5, pady = 5 ,side = BOTTOM)
-        self.sortear = Button(self.widget2)
-        self.sortear["text"] = "Sortear"
-        self.sortear["font"] = ("Calibri", "9")
-        self.sortear["width"] = 10
+        self.widget_botao = Frame(master)
+             
+        self.botao_sorteio = Button(self.widget_botao, text = "Sortear", width =10, font = ("Calibri", "9"))
 
         self.widget3 = Frame(master)
-        self.widget3.place(x = 220, y = 150)
+        
 
-        self.resultado = Label(self.widget3, text = str(np.random.randint(0, 101)) , background = "#FFF" )
-        self.sortear["command"] = resultado.
-        self.sortear.pack (side = BOTTOM)
+        self.resultado = Label(self.widget3, text = str(np.random.randint(0, 101)) , background = "black", foreground = "white")
+        self.resultado["font"] = ("Calibri", "33", "bold")
+        self.botao_sorteio.bind("<Button-1>", self.sortear)
+
+        self.widget3.pack(padx = 75, pady = 75)
+        self.botao_sorteio.pack(side = BOTTOM)
+        self.widget_botao.pack()
         self.resultado.pack()
+        
+
+    def sortear(self, event):
+        self.resultado['text'] = str(np.random.randint(0, 101))
 
 
-    def sortear(self):
-        self.numero_sorteado =  str(np.random.randint(0, 101))
+def main():
+    sorteado = False
+    app = Tk()
+    app.title("Sorteio")
+    app.geometry("500x300")
+    app.configure(background = "#FFF")
 
-app = Tk()
-app.title("Sorteio")
-app.geometry("500x300")
-app.configure(background = "#FFF")
+    Application(app)
+    app.mainloop()
+    
 
-Application(app)
-app.mainloop()
+
+if __name__ == "__main__":
+    main()
