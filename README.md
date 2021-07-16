@@ -3,4 +3,4 @@ A simple raffler with tkinter GUI lib in Python.
 
 Um simples sorteador com interface gráfica em Python usando a biblioteca tkinter.
 
-![image](https://user-images.githubusercontent.com/58861384/125877374-6c37046b-40a8-48da-8181-c039e5a53d3f.png)
+![image](https://user-images.githubusercontent.com/58861384/125883681-ab721618-65f1-433d-acbe-7b06c52be397.png)
